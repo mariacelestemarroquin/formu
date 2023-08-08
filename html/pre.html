@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam</title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Traductionnnnnn</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/style.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <center>
+    <h1>Exam Farm's animals</h1>
+    <form id="exam-form">
+        <p>1. How many horses are in the form?</p>
+        <input type="radio" name="pregunta1" value="incorrecta"> 3 horses<br>
+        <input type="radio" name="pregunta1" value="correcta"> There is no horse.<br>
+        <input type="radio" name="pregunta1" value="incorrecta"> 1 Horse<br>
+
+        <p>2. Is there a pig in the form?</p>
+        <input type="radio" name="pregunta2" value="correcta"> True<br>
+        <input type="radio" name="pregunta2" value="incorrecta"> False<br>
+
+        <p>3. Is there a white dog in the farm?</p>
+        <input type="radio" name="pregunta3" value="incorrecta"> True<br>
+        <input type="radio" name="pregunta3" value="correcta"> False<br>
+
+        <p>4. How many hens are in the farm?</p>
+        <input type="radio" name="pregunta4" value="incorrecta"> 3 hens<br>
+        <input type="radio" name="pregunta4" value="incorrecta"> There is no hens<br>
+        <input type="radio" name="pregunta4" value="correcta"> 2 hens<br>
+
+        <p>5. What color is the cat?</p>
+        <input type="radio" name="pregunta5" value="correcta"> Yellow<br>
+        <input type="radio" name="pregunta5" value="incorrecta"> Grey<br>
+        <input type="radio" name="pregunta5" value="incorrecta"> Blue<br>
+
+        <p>6. How many cows are in the farm?</p>
+        <input type="radio" name="pregunta6" value="correcta"> 1 Cow<br>
+        <input type="radio" name="pregunta6" value="incorrecta"> 3 Cows<br>
+        <input type="radio" name="pregunta6" value="incorrecta"> 5 Cows<br>
+
+        <p>7. Are there four sheeps?</p>
+        <input type="radio" name="pregunta7" value="correcta"> True<br>
+        <input type="radio" name="pregunta7" value="incorrecta"> False<br>
+
+        <p>8. How many ducks are in the farm?</p>
+        <input type="radio" name="pregunta8" value="correcta"> 3 ducks<br>
+        <input type="radio" name="pregunta8" value="incorrecta"> 2 ducks<br>
+        <input type="radio" name="pregunta8" value="incorrecta"> There is no ducks<br>
+
+        <p>9. Are they happy?</p>
+        <input type="radio" name="pregunta9" value="correcta"> True<br>
+        <input type="radio" name="pregunta9" value="incorrecta"> False<br>
+
+        <p>10. What do the hens do?</p>
+        <input type="radio" name="pregunta10" value="correcta"> They make eggs to eat.<br>
+        <input type="radio" name="pregunta10" value="incorrecta"> They eat corn.<br>
+        <input type="radio" name="pregunta10" value="incorrecta"> They eat lettuce.<br>
+        <br>
+
+        <button type="button" onclick="calcularPuntaje()">Send Answers</button>
+        
+    </form>
+
+    <div id="resultado"></div>
+    </center>
+
+    <script>
+        function calcularPuntaje() {
+            const form = document.getElementById("exam-form");
+            const respuestas = form.elements;
+
+            let puntaje = 0;
+            for (let i = 0; i < respuestas.length; i++) {
+                if (respuestas[i].checked && respuestas[i].value === "correcta") {
+                    puntaje++;
+                }
+            }
+
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = "Puntaje obtenido: " + Math.floor(puntaje) + " de 10";
+        }
+    </script>
+</body>
+</html>
